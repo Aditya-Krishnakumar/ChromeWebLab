@@ -22,10 +22,7 @@ function check {
     version=`$1 $2 2>&1 | $3`
     if [[ "$version" -ge  "$4" ]]; then
       printf "%s\n" " [PASS]"
-    else
-      printf "%s\n" " [FAIL]" 
-    fi
-  fi
+    
 }
 
 check "node" "--version" 'sed s#v0\.\([0-9]*\)\.\([0-9]*\)#\1\2#' 105   # Node > 0.10.5
